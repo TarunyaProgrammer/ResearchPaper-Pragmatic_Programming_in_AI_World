@@ -9,48 +9,58 @@
 
 ## 📌 Executive Summary
 
-This repository contains the source code, BibTeX citations, and manuscript assets for the research paper titled **"Pragmatic Software Engineering in the Age of AI: Patterns, Trade-offs, and Verification Workflows"** authored by **Tarunya Kesh**.
+This repository contains the research workspace, empirical research rules, BibTeX citations, and 2-column manuscript source for the paper:
 
-As Large Language Models (LLMs) and autonomous AI coding agents reshape the software engineering landscape, developer responsibilities are pivoting from low-level syntax construction to high-level intent architecture, prompt engineering, context window management, and automated verification. This paper establishes an empirical and pragmatic framework for navigating human-AI pair programming without accumulating hidden architectural debt.
+**"Pragmatic Software Engineering in the Age of AI: Patterns, Trade-offs, and Verification Workflows"**
+
+* **Author**: Tarunya Kesharwani
+* **Affiliation**: 2nd Year B.Tech, Newton School of Technology
+* **GitHub**: [@tarunyaprogrammer](https://github.com/tarunyaprogrammer)
+* **Email**: `tarunyak.10@gmail.com`
+* **Manuscript Style**: Traditional 2-Column Academic Research Article
 
 ---
 
-## 📄 Abstract
+## 📜 Scientific Research Directives (`RESEARCH_RULES.md`)
 
-> The rapid proliferation of Large Language Models (LLMs) and autonomous AI coding agents has initiated a paradigm shift in software engineering. Traditional programming workflows heavily prioritized manual syntax construction, boilerplates, and manual implementation details. In an AI-augmented landscape, pragmatic software engineering shifts developer focus toward high-level intent specification, architectural governance, and rigorous automated verification. This paper explores the core methodologies, operational trade-offs, and emerging design patterns of programming alongside AI agents. We analyze prompt engineering as informal specification, the dynamics of cognitive load, context-window management, and the crucial role of automated testing to bound non-deterministic model outputs. Finally, we formulate a pragmatic framework for evaluating when AI acceleration enhances system quality versus when it risks accumulating hidden architectural debt.
+This repository enforces strict scientific research principles governing human-AI pair research and manuscript generation:
+* **Rule A (No Fabrication)**: Zero tolerance for fake papers, DOIs, authors, or statistics. Unverified sources are explicitly flagged.
+* **Rule B (Evidence vs. Interpretation)**: Clear separation between observed data, analytical interpretation, hypotheses, and speculation.
+* **Rule C (No Unsupported Causal Claims)**: Uses correlational language (*associated with*, *correlated with*) unless experimental designs explicitly prove causation.
+* **Rule D (RQ-Driven Inquiry)**: Every analysis maps to an explicit Research Question in `research/questions.md`.
+* **Rule E (No Result Manipulation)**: Full reporting of negative, null, or inconclusive results.
+* **Rule G (Reproducibility)**: Every quantitative metric is traceable: $\text{raw} \to \text{processed} \to \text{analysis} \to \text{figure} \to \text{paper}$.
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Layout
 
 ```text
 ResearchPaper-Pragmatic_Programming_in_AI_World/
+├── RESEARCH_RULES.md       # Primary scientific research directives & AI agent guardrails
+├── research/
+│   ├── questions.md        # Explicit Research Questions (RQs)
+│   ├── literature.md       # Literature matrix & verified source tracking
+│   ├── methodology.md      # Detailed experimental methodology
+│   └── research-log.md     # Chronological research decision log
 ├── Paper/
-│   ├── main.tex           # Primary LaTeX manuscript source file
-│   ├── references.bib     # BibTeX citations and references database
-│   ├── main.pdf          # Compiled publication-ready PDF document
-│   └── .gitignore        # LaTeX build artifact exclusions
-├── README.md              # Project overview and documentation (this file)
-└── .gitignore             # Repository root ignore rules
+│   ├── main.tex           # 2-column LaTeX manuscript source
+│   ├── references.bib     # BibTeX citations database
+│   ├── main.pdf          # Compiled 2-column PDF paper
+│   └── .gitignore        # LaTeX build exclusions
+├── .vscode/
+│   └── settings.json      # VS Code / Antigravity LaTeX Workshop configuration
+├── README.md              # Project documentation (this file)
+└── LICENSE                # All Rights Reserved strict license
 ```
 
 ---
 
 ## 🛠️ Building & Previewing the Paper
 
-### Prerequisites
-Make sure you have a TeX distribution installed on your Mac (such as `basictex` or `mactex`):
-
+### Command Line
 ```bash
-brew install --cask basictex
-eval "$(/usr/libexec/path_helper)"
-```
-
-### Option 1: Command Line Compilation
-
-Navigate into the `Paper/` directory and run:
-
-```bash
+export PATH="/Library/TeX/texbin:$PATH"
 cd Paper
 pdflatex main.tex
 bibtex main
@@ -58,22 +68,19 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-### Option 2: Live Preview in VS Code / Cursor / Antigravity
-
-1. Install the **LaTeX Workshop** extension in VS Code.
-2. Open `Paper/main.tex`.
-3. Press `⌘ + Option + V` to launch the live side-by-side PDF preview window.
+### VS Code / Cursor / Antigravity
+1. Open `Paper/main.tex`.
+2. Press `⌘ + Option + V` (or click the green Play icon).
+3. Live split-screen PDF preview opens automatically next to your code.
 
 ---
 
 ## 📖 Citation Format
 
-If you reference or build upon this work, please cite it using the following BibTeX entry:
-
 ```bibtex
-@article{kesh2026pragmatic,
+@article{kesharwani2026pragmatic,
   title     = {Pragmatic Software Engineering in the Age of AI: Patterns, Trade-offs, and Verification Workflows},
-  author    = {Kesh, Tarunya},
+  author    = {Kesharwani, Tarunya},
   journal   = {Research Paper Series in AI-Assisted Software Engineering},
   year      = {2026},
   url       = {https://github.com/TarunyaProgrammer/ResearchPaper-Pragmatic_Programming_in_AI_World}
@@ -84,4 +91,4 @@ If you reference or build upon this work, please cite it using the following Bib
 
 ## 📜 License
 
-Copyright (c) 2026 Tarunya Kesh. All rights reserved. See the [LICENSE](LICENSE) file for strict usage permissions.
+Copyright (c) 2026 Tarunya Kesharwani. All rights reserved. See the [LICENSE](LICENSE) file for strict usage terms.

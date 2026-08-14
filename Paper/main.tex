@@ -1,8 +1,10 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,twocolumn,a4paper]{article}
 
 % --- Packages ---
 \usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.75in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -13,7 +15,7 @@
 
 % --- Listing Styles for Code ---
 \lstset{
-  basicstyle=\ttfamily\small,
+  basicstyle=\ttfamily\scriptsize,
   breaklines=true,
   frame=single,
   keywordstyle=\color{blue},
@@ -21,29 +23,34 @@
   stringstyle=\color{teal}
 }
 
-% --- Title & Author ---
-\title{\textbf{Pragmatic Software Engineering in the Age of AI:\\ Patterns, Trade-offs, and Verification Workflows}}
-\author{\textbf{Tarunya Kesh}\\
-\small Department of Computer Science \& Engineering\\
-\small \href{mailto:author@domain.com}{author@domain.com}}
-\date{\today}
+% --- Title & Author Metadata ---
+\title{\Large \textbf{Pragmatic Software Engineering in the Age of AI:\\ Patterns, Trade-offs, and Verification Workflows}}
+
+\author{
+  \textbf{Tarunya Kesharwani}\\
+  \small 2nd Year B.Tech, Newton School of Technology\\
+  \small GitHub: \href{https://github.com/tarunyaprogrammer}{\texttt{tarunyaprogrammer}}\\
+  \small Email: \href{mailto:tarunyak.10@gmail.com}{\texttt{tarunyak.10@gmail.com}}
+}
+
+\date{\texttt{dd/mm/yyyy}}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-The rapid proliferation of Large Language Models (LLMs) and autonomous AI coding agents has initiated a paradigm shift in software engineering. Traditional programming workflows heavily prioritized manual syntax construction, boilerplates, and manual implementation details. In an AI-augmented landscape, pragmatic software engineering shifts developer focus toward high-level intent specification, architectural governance, and rigorous automated verification. This paper explores the core methodologies, operational trade-offs, and emerging design patterns of programming alongside AI agents. We analyze prompt engineering as informal specification, the dynamics of cognitive load, context-window management, and the crucial role of automated testing to bound non-deterministic model outputs. Finally, we formulate a pragmatic framework for evaluating when AI acceleration enhances system quality versus when it risks accumulating hidden architectural debt.
+The rapid proliferation of Large Language Models (LLMs) and autonomous AI coding agents has initiated a paradigm shift in software engineering. Traditional programming workflows heavily prioritized manual syntax construction, boilerplates, and manual implementation details. In an AI-augmented landscape, pragmatic software engineering shifts developer focus toward high-level intent specification, architectural governance, and rigorous automated verification. This paper explores core methodologies, operational trade-offs, and emerging design patterns observed alongside AI pair-programming tools. We examine prompt engineering as informal specification, the dynamics of cognitive load, context-window management, and the crucial role of automated testing to bound non-deterministic model outputs. Finally, we formulate a pragmatic framework for evaluating when AI acceleration enhances system quality versus when it is associated with accumulating technical debt.
 \end{abstract}
 
-\textbf{Keywords:} Artificial Intelligence, Software Engineering, Pragmatic Programming, LLM Agents, Code Verification, System Architecture.
+\textbf{Keywords---} Artificial Intelligence, Software Engineering, Pragmatic Programming, LLM Agents, Code Verification, System Architecture.
 
 \section{Introduction}
 Software development is undergoing one of its most transformative shifts since the introduction of high-level programming languages and integrated development environments (IDEs)~\cite{githubcopilot2023}. AI-assisted coding tools, powered by transformer-based neural network architectures, are no longer limited to basic code completion; they act as interactive pair programmers, autonomous task solvers, and code synthesis engines~\cite{pragmaticai2024}.
 
-However, while AI tools accelerate initial code generation, they introduce novel challenges. Generative models operate probabilistically, occasionally hallucinating invalid APIs, introducing silent security vulnerabilities, or creating bloated abstractions that degrade maintainability. Consequently, modern software engineers must adopt a \textit{pragmatic} approach: prioritizing real-world efficacy, maintainability, and empirical verification over blind reliance on AI output.
+However, while AI tools accelerate initial code generation, they introduce novel challenges. Generative models operate probabilistically, occasionally hallucinating invalid APIs, introducing silent security vulnerabilities, or generating verbose abstractions. Consequently, modern software engineers must adopt a \textit{pragmatic} approach: prioritizing real-world efficacy, maintainability, and empirical verification over uncritical reliance on AI output.
 
-This paper establishes the foundational tenets of pragmatic programming in an AI-dominated era, offering structured patterns for human-AI collaboration.
+This paper establishes foundational tenets for pragmatic programming in an AI-driven era, offering structured patterns for human-AI collaboration.
 
 \section{The Pragmatic AI Developer Paradigm}
 
@@ -56,50 +63,51 @@ In conventional software development, developers spend a significant portion of 
 \end{enumerate}
 
 \subsection{The Pragmatic Balance: Speed vs. Maintainability}
-AI generation makes producing thousands of lines of code trivial. However, uncritical acceptance of generated code leads to severe technical debt. Table~\ref{tab:comparison} highlights the contrast between naive AI adoption and pragmatic AI engineering.
+AI generation makes producing code rapid and accessible. However, uncritical acceptance of generated code is frequently associated with technical debt. Table~\ref{tab:comparison} summarizes key differences between naive AI adoption and pragmatic AI engineering.
 
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \caption{Comparison of Naive vs. Pragmatic AI-Assisted Development}
 \label{tab:comparison}
-\begin{tabular}{lll}
+\small
+\begin{tabular}{p{0.20\textwidth} p{0.36\textwidth} p{0.36\textwidth}}
 \toprule
 \textbf{Dimension} & \textbf{Naive AI Usage} & \textbf{Pragmatic AI Engineering} \\
 \midrule
 Code Generation & Accepts output without audit & Audits security, types, and dependencies \\
-Architecture & Allows AI to invent duplicate patterns & Enforces repository design conventions \\
+Architecture & Allows duplicate patterns & Enforces repository design conventions \\
 Testing & Relies on manual visual check & Demands automated unit and integration tests \\
 Debugging & Prompt-loops blindly & Reads full stack traces and root causes \\
-Documentation & Neglects intent & Maintains strict architecture decision records \\
+Documentation & Neglects intent & Maintains strict decision records \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \section{Core Methodologies and Patterns}
 
 \subsection{Spec-Driven and Test-Driven AI Generation}
 Pragmatic engineering dictates that non-deterministic AI generation must be constrained by deterministic boundaries. Test-Driven Development (TDD) paired with AI synthesis provides a robust guardrail:
 \begin{equation}
-\text{Contract} + \text{Automated Tests} \xrightarrow{\text{AI Agent}} \text{Verified Implementation}
+\text{Contract} + \text{Automated Tests} \xrightarrow{\text{AI Agent}} \text{Verified Code}
 \end{equation}
 By writing interface definitions and test assertions first, developers enable AI agents to iterate autonomously until all test constraints pass.
 
 \subsection{Context Window Engineering}
-Effective collaboration with AI requires managing the context provided to the model. Providing too little context leads to generic or inaccurate code; providing excessive or irrelevant context dilutes key constraints. Key patterns include:
+Effective collaboration with AI requires managing the context provided to the model. Providing insufficient context leads to generic or inaccurate code; providing excessive context dilutes key constraints. Key patterns include:
 \begin{itemize}
     \item \textbf{Minimal Reproducible Context:} Including only mandatory interfaces, dependencies, and rules.
     \item \textbf{Repository Knowledge Items:} Maintaining dynamic summaries of architecture decisions and code patterns.
 \end{itemize}
 
 \section{Verification and Security Safeguards}
-Security flaws in AI-generated code often stem from obsolete training data or naive prompt suggestions. Pragmatic engineering mandates automated analysis pipelines:
+Security vulnerabilities in AI-generated code frequently stem from obsolete training data or naive prompt suggestions. Pragmatic engineering mandates automated analysis pipelines:
 \begin{itemize}
     \item \textbf{Static Analysis \& Linting:} Enforcing strict typing, unused variable detection, and formatting rules.
     \item \textbf{Vulnerability Scanning:} Checking for SQL injection, XSS vulnerabilities, and unsafe dependency imports.
 \end{itemize}
 
 \section{Conclusion and Future Work}
-Pragmatic programming in the AI era does not diminish the value of human software engineering expertise; rather, it elevates it. Developers who master intent specification, system design, and rigorous verification can achieve unprecedented productivity while preserving codebase health. Future work will investigate automated multi-agent code verification frameworks and long-term maintainability metrics for AI-synthesized codebases.
+Pragmatic programming in the AI era does not diminish the value of human software engineering expertise; rather, it elevates it. Developers who master intent specification, system design, and rigorous verification can achieve high productivity while preserving codebase health. Future work will empirically evaluate automated multi-agent code verification frameworks and long-term maintainability metrics for AI-synthesized codebases.
 
 \bibliographystyle{plain}
 \bibliography{references}
