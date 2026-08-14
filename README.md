@@ -9,41 +9,52 @@
 
 ## 📌 Executive Summary
 
-This repository contains the empirical research workspace, data collection pipeline, BibTeX citations, and 2-column manuscript for the paper:
+This repository hosts the primary research workspace, data collection telemetry, BibTeX bibliography, and manuscript source for the empirical software engineering study:
 
-**"Pragmatic Programming in the Age of AI Coding Agents: An Empirical Case Study of Software Engineering Practices in AI-Assisted Development"**
+> **"Pragmatic Programming in the Age of AI Coding Agents: An Empirical Case Study of Software Engineering Practices in AI-Assisted Development"**
 
 * **Author**: Tarunya Kesharwani
 * **Affiliation**: 2nd Year B.Tech, Newton School of Technology
 * **GitHub**: [@tarunyaprogrammer](https://github.com/tarunyaprogrammer)
 * **Email**: `tarunyak.10@gmail.com`
-* **Manuscript Style**: Traditional 2-Column Academic Research Article
+* **Manuscript Format**: Traditional 2-Column Academic Research Article
 
 ---
 
-## 📜 Scientific Research Directives (`RESEARCH_RULES.md`)
+## 🔬 Empirical Research Framework & Methodological Principles
 
-This repository enforces strict scientific research principles governing AI-assisted research and manuscript generation:
-* **Rule A (Never Fabricate)**: Zero tolerance for fake papers, DOIs, authors, or statistics.
-* **Rule B (Evidence vs. Interpretation)**: Explicit separation between empirical data, analytical interpretation, hypotheses, and speculation.
-* **Rule C (No Unsupported Causal Claims)**: Uses correlational language (*associated with*, *correlated with*).
-* **Rule D (RQ-Driven Inquiry)**: Every metric and table maps to an explicit Research Question.
-* **Rule E (No Result Manipulation)**: Full reporting of negative, null, or inconclusive results.
-* **Rule G (Reproducibility)**: Traceable pipeline: $\text{raw/} \to \text{processed/} \to \text{analysis/} \to \text{figures/} \to \text{paper/}$.
+This study investigates how classical software engineering principles—specifically **orthogonality**, **duplication avoidance (DRY)**, **modularity**, and **test-driven guardrails**—manifest when software implementation is partially or fully delegated to autonomous AI coding agents.
 
----
+### Scientific Principles Guiding This Study
+* **RQ-Driven Investigation**: All metrics, repository mining procedures, and statistical tests map directly to explicit Research Questions.
+* **Evidence vs. Interpretation**: Clear operational distinction between observed commit diffs, statistical correlations, analytical interpretations, and hypotheses.
+* **No Unsupported Causal Claims**: Strict usage of correlational terminology (*associated with*, *correlated with*) to prevent unwarranted causal assertions.
+* **Reproducible Data Lineage**: Every quantitative table value and plot is traceable through a transparent analysis pipeline:
 
-## 🗺️ Research Milestone Progress (`research/`)
-
-- [x] **[`01-research-question.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/01-research-question.md)**: Formalized RQ1, RQ2, RQ3, and RQ4.
-- [x] **[`02-literature-review.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/02-literature-review.md)**: Primary literature matrix & research gap definition.
-- [x] **[`03-pragmatic-principles.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/03-pragmatic-principles.md)**: Operationalized DRY, Orthogonality, Modularity, and Testing into observable metrics.
-- [x] **[`04-methodology.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/04-methodology.md)**: Mixed-methods empirical study design & dataset pipeline.
-- [x] **[`05-research-log.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/05-research-log.md)**: Chronological decision log.
+$$\text{data/raw/} \longrightarrow \text{data/processed/} \longrightarrow \text{analysis/} \longrightarrow \text{Paper/main.pdf}$$
 
 ---
 
-## 📂 Repository Layout
+## 🎯 Research Questions (RQs)
+
+* **RQ1 (Principle Manifestation)**: How do traditional pragmatic software-engineering principles (e.g., orthogonality, DRY, modularity) manifest in AI-assisted software development?
+* **RQ2 (Engineering Practice Impact)**: How does AI-assisted code generation affect core practices such as refactoring, test co-evolution, and change propagation?
+* **RQ3 (Critical Guardrails)**: Which traditional engineering practices become most critical to system stability when implementation is delegated to AI agents?
+* **RQ4 (Emergent Defect Taxonomy)**: What specific categories of architectural friction and integration defects emerge in AI-generated code bases?
+
+---
+
+## 🗺️ Research Workspace Architecture (`research/`)
+
+- [x] **[`01-research-question.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/01-research-question.md)**: Formalized RQ specifications.
+- [x] **[`02-literature-review.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/02-literature-review.md)**: Primary literature matrix & research gap identification.
+- [x] **[`03-pragmatic-principles.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/03-pragmatic-principles.md)**: Operationalized principles into observable software engineering metrics.
+- [x] **[`04-methodology.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/04-methodology.md)**: Empirical repository mining methodology & commit classification.
+- [x] **[`05-research-log.md`](file:///Users/tarunyakesh/Desktop/ResearchPapers/ResearchPaper-Pragmatic_Programming_in_AI_World/research/05-research-log.md)**: Chronological research decision log.
+
+---
+
+## 📂 Public Repository Layout
 
 ```text
 ResearchPaper-Pragmatic_Programming_in_AI_World/
@@ -54,16 +65,16 @@ ResearchPaper-Pragmatic_Programming_in_AI_World/
 │   ├── 04-methodology.md          # Empirical dataset & study methodology
 │   └── 05-research-log.md         # Chronological research decision log
 ├── data/
-│   ├── raw/                       # Raw git log & commit metadata
-│   └── processed/                 # Cleaned classified dataset (AI vs Human)
+│   ├── raw/                       # Raw git commit metadata & telemetry logs
+│   └── processed/                 # Cleaned classified commit datasets (AI vs Human)
 ├── analysis/
-│   └── extract_metrics.py         # Python metric extraction pipeline
+│   └── extract_metrics.py         # Automated Python metric extraction script
 ├── Paper/
 │   ├── main.tex                  # 2-column LaTeX manuscript source
-│   ├── references.bib            # BibTeX citations database
+│   ├── references.bib            # BibTeX bibliography database
 │   ├── main.pdf                 # Compiled 2-column PDF manuscript
 │   └── .gitignore               # LaTeX build exclusions
-├── README.md                     # Project overview and milestone roadmap
+├── README.md                     # Project documentation (this file)
 └── LICENSE                       # All Rights Reserved strict license
 ```
 
@@ -71,7 +82,7 @@ ResearchPaper-Pragmatic_Programming_in_AI_World/
 
 ## 🛠️ Building & Previewing the Paper
 
-### Command Line
+### Command Line Build
 ```bash
 export PATH="/Library/TeX/texbin:$PATH"
 cd Paper
@@ -80,11 +91,6 @@ bibtex main
 pdflatex main.tex
 pdflatex main.tex
 ```
-
-### VS Code / Cursor / Antigravity
-1. Open `Paper/main.tex`.
-2. Press `⌘ + Option + V` (or click the green Play icon).
-3. Live split-screen PDF preview opens automatically next to your code.
 
 ---
 
@@ -104,4 +110,4 @@ pdflatex main.tex
 
 ## 📜 License
 
-Copyright (c) 2026 Tarunya Kesharwani. All rights reserved. See the [LICENSE](LICENSE) file for usage terms.
+Copyright (c) 2026 Tarunya Kesharwani. All rights reserved. See the [LICENSE](LICENSE) file for strict usage permissions.
