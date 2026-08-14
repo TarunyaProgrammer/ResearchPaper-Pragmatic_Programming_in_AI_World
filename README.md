@@ -47,7 +47,6 @@ This repository enforces strict scientific research principles governing AI-assi
 
 ```text
 ResearchPaper-Pragmatic_Programming_in_AI_World/
-├── RESEARCH_RULES.md          # Primary scientific research directives & AI agent guardrails
 ├── research/
 │   ├── 01-research-question.md    # Formalized Research Questions (RQs)
 │   ├── 02-literature-review.md    # Verified literature matrix & research gap
@@ -64,8 +63,6 @@ ResearchPaper-Pragmatic_Programming_in_AI_World/
 │   ├── references.bib            # BibTeX citations database
 │   ├── main.pdf                 # Compiled 2-column PDF manuscript
 │   └── .gitignore               # LaTeX build exclusions
-├── .vscode/
-│   └── settings.json             # VS Code LaTeX Workshop configuration
 ├── README.md                     # Project overview and milestone roadmap
 └── LICENSE                       # All Rights Reserved strict license
 ```

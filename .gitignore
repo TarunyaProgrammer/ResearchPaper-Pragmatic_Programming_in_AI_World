@@ -11,4 +11,6 @@
 *.out
 *.synctex.gz
 *.toc
-*.pdf
+# Local private research rules & IDE settings
+RESEARCH_RULES.md
+.vscode/
